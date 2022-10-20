@@ -2,18 +2,20 @@ package com.pang.kinect_project.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "doctor")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"}) // 使用hibernate
-public class Doctor {
+public class Inspector {
+    @Id
+    private String d_id;
+    private String inspectorName;
+
     public String getD_id() {
         return d_id;
     }
@@ -22,25 +24,20 @@ public class Doctor {
         this.d_id = d_id;
     }
 
-    @Id // 表示d_id为主键
-    private String d_id; // 医生账号
-    private String doctorName; // 医生姓名
-    private String passWord; // 密码
-    private String phoneNumber; // 手机号
-    public String getDoctorName() {
-        return doctorName;
+    public String getInspectorName() {
+        return inspectorName;
     }
 
-    public void setDoctorName(String doctorName) {
-        this.doctorName = doctorName;
+    public void setInspectorName(String inspectorName) {
+        this.inspectorName = inspectorName;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getPhoneNumber() {
@@ -51,4 +48,6 @@ public class Doctor {
         this.phoneNumber = phoneNumber;
     }
 
+    private String password;
+    private String phoneNumber;
 }

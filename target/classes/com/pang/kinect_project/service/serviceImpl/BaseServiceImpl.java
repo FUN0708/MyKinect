@@ -8,4 +8,10 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
     public boolean insert(T entity) {
         return false;
     }
+
+
+    @Override
+    public boolean delete(T entity) {return false;}
+
+
 }

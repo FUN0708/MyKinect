@@ -14,19 +14,19 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"}) // 使用hibernate
 public class Doctor {
-    @Id // 表示d_id为主键
-    private int d_id; // 医生账号
-    private String doctorName; // 医生姓名
-    private String passWord; // 密码
-    private String phoneNumber; // 手机号
-    public int getD_id() {
+    public String getD_id() {
         return d_id;
     }
 
-    public void setD_id(int d_id) {
+    public void setD_id(String d_id) {
         this.d_id = d_id;
     }
 
+    @Id // 表示d_id为主键
+    private String d_id; // 医生账号
+    private String doctorName; // 医生姓名
+    private String passWord; // 密码
+    private String phoneNumber; // 手机号
     public String getDoctorName() {
         return doctorName;
     }

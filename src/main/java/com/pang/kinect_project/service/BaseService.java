@@ -7,4 +7,9 @@ public interface BaseService<T> {
      * @return
      */
     boolean insert(T entity) ;
+
+    /**
+     * 刪除數據
+     */
+    boolean delete(T entity);
 }

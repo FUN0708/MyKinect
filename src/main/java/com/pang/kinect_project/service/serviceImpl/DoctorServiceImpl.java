@@ -17,9 +17,9 @@ public class DoctorServiceImpl extends BaseServiceImpl<Doctor> implements Doctor
     @Override
     public Result login(String d_id, String password) {
         Doctor doctor = doctorDao.login(d_id);
-//        System.out.println(doctor.getDoctorName());
         Result result = new Result();
-        if(password.equals(doctor.getPassWord())){
+        // 验证查询返回结果
+        if(doctor != null && password.equals(doctor.getPassWord())){
             result.setCode(200);
             result.setMessage("登录成功");
         } else{
