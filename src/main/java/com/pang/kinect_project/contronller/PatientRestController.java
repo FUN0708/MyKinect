@@ -19,7 +19,7 @@ public class PatientRestController {
      * @param patient
      * @return
      */
-    @RequestMapping("/insertPatient")
+    @RequestMapping("/savePatient")
     public Result insertPatient(@RequestBody Patient patient){
         Result result = patientService.insertPatient(patient);
         return result;

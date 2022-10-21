@@ -16,7 +16,7 @@ public class PatientServiceImpl extends BaseServiceImpl<Patient> implements Pati
         Result result = new Result();
         if(patient.getPatientID().length() != 18 || patient.getPatientPhone().length() != 11 ||
          patient.getPatientSex() > 2 || patient.getPatientSex() < 0 || patient.getPatientName().length() == 0){
-            result.setCode(200);
+            result.setCode(400);
             result.setMessage("保存失败，请检查输入");
         } else {
             if(selectPatientID(patient.getPatientID())){
@@ -29,10 +29,10 @@ public class PatientServiceImpl extends BaseServiceImpl<Patient> implements Pati
                     result.setCode(200);
                     result.setMessage("保存成功");
                 } else {
-                    System.out.println("更新失败");
+                    result.setCode(200);
+                    result.setMessage("保存失败，请检查输入");
                 }
             } else{
-                System.out.println("插入");
                 // 不存在该患者，插入患者信息
                 patientDao.insert(patient.getPatientID(), patient.getPatientName(),
                         patient.getPatientPhone(), patient.getPatientSex());
@@ -45,10 +45,9 @@ public class PatientServiceImpl extends BaseServiceImpl<Patient> implements Pati
 
     @Override
     public boolean selectPatientID(String patientID) {
-        // id长度不为11，直接返回
+        // 身份证号长度不为18，直接返回
         if(patientID.length() != 18) return false;
         Patient patient = patientDao.selectByPatientID(patientID);
-        System.out.println("查询患者信息：");
         // 如果患者存在返回true, 不存在返回false
         return patient != null;
     }

@@ -1,5 +1,6 @@
 package com.pang.kinect_project.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +10,7 @@ import javax.persistence.Id;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"handler","hibernateLazyInitializer"}) // 使用hibernate
 public class Patient {
     @Id
     private String patientID;
