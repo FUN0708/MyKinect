@@ -1,5 +1,6 @@
-package com.pang.kinect_project.contronller.RequestDto;
+package com.pang.kinect_project.contronller;
 
+import com.pang.kinect_project.contronller.RequestDto.LoginDto;
 import com.pang.kinect_project.pojo.Inspector;
 import com.pang.kinect_project.result.Result;
 import com.pang.kinect_project.service.InspectorService;

@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * 定义基类数据操作
  */
-@Mapper
+
 public interface BaseDao<T> {
     /**
      * 插入某条数据

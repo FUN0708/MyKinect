@@ -6,6 +6,7 @@ import com.pang.kinect_project.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -20,6 +21,7 @@ public class PatientRestController {
      * @return
      */
     @RequestMapping("/savePatient")
+    @ResponseBody
     public Result insertPatient(@RequestBody Patient patient){
         Result result = patientService.insertPatient(patient);
         return result;

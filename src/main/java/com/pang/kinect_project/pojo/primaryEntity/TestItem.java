@@ -3,15 +3,12 @@ package com.pang.kinect_project.pojo.primaryEntity;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
 
-/**
- * 患者检查项目中需要两个主键来进行标识
- */
 @Data
-public class PatientTest implements Serializable {
+public class TestItem implements Serializable {
     private String patientID;
     private String testDate;
+    private int projectID;
 
     public String getPatientID() {
         return patientID;
@@ -27,6 +24,14 @@ public class PatientTest implements Serializable {
 
     public void setTestDate(String testDate) {
         this.testDate = testDate;
+    }
+
+    public int getProjectID() {
+        return projectID;
+    }
+
+    public void setProjectID(int projectID) {
+        this.projectID = projectID;
     }
     @Override
     public int hashCode() {

@@ -4,6 +4,10 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+
+/**
+ * 患者检查项目中需要两个主键来进行标识
+ */
 @Data
 public class PatientTest implements Serializable {
     private String patientID;
