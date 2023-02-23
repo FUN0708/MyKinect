@@ -13,7 +13,7 @@ public interface DoctorDao extends BaseDao<Doctor> {
 
     // 使用mybatis方法
     // 登录验证
-    @Select("select * from doctor where d_id = #{d_id}")
+    @Select("select * from doctor where docterId = #{d_id}")
     public Doctor login(String d_id);
 
 }

@@ -3,6 +3,8 @@ package com.pang.kinect_project.mapper;
 import com.pang.kinect_project.pojo.Patient;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 @Mapper
 public interface PatientDao extends BaseDao<Patient>{
     /**
@@ -33,5 +35,8 @@ public interface PatientDao extends BaseDao<Patient>{
      * @return
      */
     @Select("select * from patient where patientID = #{patientID}")
-    public Patient selectByPatientID(String patientID);
+    public List<Patient> selectByPatientID(String patientID);
+
+    @Select("select * from patient where patientPhone = #{patientPhone}")
+    public List<Patient> selectByPatientPhone(String patientPhone);
 }
